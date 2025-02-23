@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+langchain = "*"
+langchain-community = "*"
+tavily-python = "*"
+langchain-groq = "*"
+groq = "*"
+replicate = "*"
+ollama = "*"
+langchain-huggingface = "*"
+langchain-ollama = "*"
+crewai = "*"
+crewai-tools = "*"
+sentence-transformers = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
+python_full_version = "3.10.14"
