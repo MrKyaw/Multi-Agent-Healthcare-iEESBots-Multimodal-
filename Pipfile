@@ -16,6 +16,7 @@ langchain-ollama = "*"
 crewai = "*"
 crewai-tools = "*"
 sentence-transformers = "*"
+opencv-python = "*"
 
 [dev-packages]
 
