@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install test tooling
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Run tests
+        run: python -m pytest -q
+
+      - name: Enforce 100% line and branch coverage
+        run: |
+          python -m pytest \
+            --cov=ieesbots \
+            --cov-branch \
+            --cov-report=term-missing \
+            --cov-fail-under=100
+
+      - name: CLI help smoke test
+        run: python -m ieesbots --help
+
+      - name: Synthetic demo smoke test
+        run: python -m ieesbots --demo > /dev/null

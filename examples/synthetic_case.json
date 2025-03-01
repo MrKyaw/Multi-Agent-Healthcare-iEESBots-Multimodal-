@@ -1,0 +1,29 @@
+{
+  "case_id": "SYN-2001",
+  "narrative": "Synthetic patient with chest pain and shortness of breath. MRN: 1234567. Contact (555) 010-2030. All details are fictional.",
+  "age": 58,
+  "symptoms": ["chest pain", "shortness of breath"],
+  "medications": ["aspirin", "metoprolol"],
+  "allergies": ["penicillin"],
+  "flags": {
+    "chest_pain": true,
+    "polypharmacy": false,
+    "imaging_available": true
+  },
+  "consent": [
+    "care.triage",
+    "evidence.retrieve",
+    "medication.review",
+    "human.review",
+    "summary.generate"
+  ],
+  "evidence": [
+    {
+      "evidence_id": "EV-100",
+      "title": "Synthetic chest pain checklist",
+      "source": "Fictional test fixture — not a guideline",
+      "text": "Synthetic text requiring immediate clinician review. Not clinical guidance.",
+      "kind": "checklist"
+    }
+  ]
+}
