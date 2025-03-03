@@ -342,7 +342,7 @@ Full threat model and residual risks: [docs/SAFETY_AND_ETHICS.md](docs/SAFETY_AN
 
 ---
 
-## Recruiter snapshot
+## Reviewer snapshot
 
 **What this project shows**
 

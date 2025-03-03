@@ -226,7 +226,7 @@ heavier); notebook-only demo (not testable).
 
 ## ADR-011: Provide a CLI with text, JSON, and exit codes
 
-**Context.** Recruiters and reviewers should be able to see the system work in one
+**Context.** Reviewers and reviewers should be able to see the system work in one
 command; automation needs machine-readable output and meaningful failures.
 
 **Decision.** `python -m ieesbots` supports `--demo`, `--case FILE`, `--json`, and
